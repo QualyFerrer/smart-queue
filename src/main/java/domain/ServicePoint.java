@@ -1,27 +1,29 @@
 package domain;
 
 import jakarta.persistence.*;
+import org.springframework.stereotype.Service;
+
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-
-@Table(name = "organizations")
-@Entity
-public class Organization {
+@Service
+@Table(name = "service_points")
+public class ServicePoint {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "organization_id", nullable = false)
+    private Organization organization;
+
     @Column(nullable = false, length = 100)
     private String name;
 
-    @Column(nullable = false, unique = true, length = 18)
-    private String cnpj;
-
     @Column(nullable = false)
-    private Boolean active;
+    private Boolean active = true;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
@@ -30,72 +32,56 @@ public class Organization {
     private LocalDateTime updatedAt;
 
     @PrePersist
-    private void onCreate() {
+    public void onCreate() {
         createdAt = LocalDateTime.now();
         updatedAt = LocalDateTime.now();
+
     }
 
     @PreUpdate
-    private void onUpdate() {
+    public void onUpdate() {
         updatedAt = LocalDateTime.now();
     }
 
-    public Organization() {
+    public ServicePoint() {
     }
 
     ;
 
-
-    public Organization(String name, String cnpj) {
+    public ServicePoint(Organization organization, String name) {
+        this.organization = organization;
         this.name = name;
-        this.cnpj = cnpj;
     }
 
     public UUID getId() {
         return id;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public Organization getOrganization() {
+        return organization;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCnpj() {
-        return cnpj;
-    }
-
-    public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
-    }
-
     public Boolean getActive() {
         return active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
     }
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 }
