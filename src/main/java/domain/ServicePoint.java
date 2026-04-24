@@ -1,13 +1,12 @@
 package domain;
 
 import jakarta.persistence.*;
-import org.springframework.stereotype.Service;
 
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Service
+@Entity
 @Table(name = "service_points")
 public class ServicePoint {
 
@@ -45,8 +44,6 @@ public class ServicePoint {
 
     public ServicePoint() {
     }
-
-    ;
 
     public ServicePoint(Organization organization, String name) {
         this.organization = organization;
