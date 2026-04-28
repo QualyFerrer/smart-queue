@@ -1,5 +1,6 @@
-package domain;
+package domain.queue;
 
+import domain.servicepoint.ServicePoint;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;

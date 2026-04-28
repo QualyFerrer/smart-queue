@@ -1,4 +1,4 @@
-package domain;
+package domain.organization;
 
 import jakarta.persistence.*;
 

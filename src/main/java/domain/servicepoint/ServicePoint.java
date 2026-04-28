@@ -1,5 +1,6 @@
-package domain;
+package domain.servicepoint;
 
+import domain.organization.Organization;
 import jakarta.persistence.*;
 
 
