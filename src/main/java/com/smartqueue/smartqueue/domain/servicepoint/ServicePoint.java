@@ -1,6 +1,6 @@
-package domain.servicepoint;
+package com.smartqueue.smartqueue.domain.servicepoint;
 
-import domain.organization.Organization;
+import com.smartqueue.smartqueue.domain.organization.Organization;
 import jakarta.persistence.*;
 
 

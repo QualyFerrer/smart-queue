@@ -1,6 +1,6 @@
-package domain.queue;
+package com.smartqueue.smartqueue.domain.queue;
 
-import domain.servicepoint.ServicePoint;
+import com.smartqueue.smartqueue.domain.servicepoint.ServicePoint;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;

@@ -1,10 +1,9 @@
-package domain.ticket;
+package com.smartqueue.smartqueue.domain.ticket;
 
-import domain.queue.Queue;
+import com.smartqueue.smartqueue.domain.queue.Queue;
 import jakarta.persistence.*;
 
 
-import java.security.InvalidKeyException;
 import java.time.LocalDateTime;
 import java.util.UUID;
 

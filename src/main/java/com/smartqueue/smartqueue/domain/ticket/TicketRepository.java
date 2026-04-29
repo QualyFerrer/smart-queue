@@ -1,4 +1,4 @@
-package domain.ticket;
+package com.smartqueue.smartqueue.domain.ticket;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

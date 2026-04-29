@@ -1,4 +1,4 @@
-package domain.servicepoint;
+package com.smartqueue.smartqueue.domain.servicepoint;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
