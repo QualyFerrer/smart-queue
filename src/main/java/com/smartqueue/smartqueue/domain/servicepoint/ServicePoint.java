@@ -63,7 +63,7 @@ public class ServicePoint {
         return name;
     }
 
-    public Boolean getActive() {
+    public Boolean isActive() {
         return active;
     }
 
