@@ -6,12 +6,11 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Queue;
 import java.util.UUID;
 
 public interface TicketRepository extends JpaRepository<Ticket, UUID> {
 
-    List<Ticket> findByQueueIdAndStatus(Queue queueId, Ticket.TicketStatus status);
+    List<Ticket> findByQueueIdAndStatus(UUID queueId, Ticket.TicketStatus status);
 
     // Próximo ticket a ser chamado:
     // Prioridade primeiro (PRIORITY antes de NORMAL), depois por número
