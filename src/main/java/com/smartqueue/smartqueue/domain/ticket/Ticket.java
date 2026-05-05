@@ -16,7 +16,7 @@ public class Ticket {
     }
 
     public enum TicketStatus {
-        WAITTING, CALLED, IN_SERVICE, COMPLETED, CANCELLED
+        WAITING, CALLED, IN_SERVICE, COMPLETED, CANCELLED
     }
 
     @Id
@@ -64,7 +64,7 @@ public class Ticket {
     }
 
     public void call() {
-        if (this.status != Ticket.TicketStatus.WAITTING) {
+        if (this.status != Ticket.TicketStatus.WAITING) {
             throw new IllegalStateException(
                     "Ticket não pode ser chamado pois está com status " + this.status
             );
