@@ -31,4 +31,6 @@ public interface TicketRepository extends JpaRepository<Ticket, UUID> {
     // Buscar o maior número de ticket numa fila (pra gerar o próximo)
     @Query("SELECT COALESCE(MAX(t.ticketNumber), 0) FROM Ticket t WHERE t.queue.id = :queueId")
     int findMaxTicketNumber(@Param("queueId") UUID queueId);
+
+    long copunt();
 }
