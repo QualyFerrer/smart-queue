@@ -46,6 +46,7 @@ public class OrganizationService {
         return repository.save(organization);
     }
 
+    @Transactional
     public Organization deactivate(UUID id) {
         Organization organization = findById(id);
         organization.setActive(false);

@@ -75,7 +75,7 @@ public class Organization {
         this.cnpj = cnpj;
     }
 
-    public Boolean getActive() {
+    public Boolean isActive() {
         return active;
     }
 
