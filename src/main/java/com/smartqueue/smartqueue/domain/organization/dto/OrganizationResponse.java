@@ -23,7 +23,7 @@ public class OrganizationResponse {
         response.id         = org.getId();
         response.name       = org.getName();
         response.cnpj       = org.getCnpj();
-        response.active     = org.getActive();
+        response.active     = org.isActive();
         response.createdAt  = org.getCreatedAt();
         return response;
     }
